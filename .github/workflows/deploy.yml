@@ -1,0 +1,40 @@
+name: Shipping Deployment
+run-name: Shipping Deployment
+on: [push, workflow_dispatch]
+jobs:
+    DEV:
+      runs-on: self-hosted
+      steps:
+        - name: Checkout helm repo
+          uses: actions/checkout@v4
+          with:
+            repository: raghudevopsb82/roboshop-helm
+        - run: |
+            echo $PATH
+            bash argocd.sh shipping dev
+          name: Deployment
+
+    QA:
+      runs-on: self-hosted
+      needs: DEV
+      steps:
+        - run: echo QA
+
+    UAT:
+      runs-on: self-hosted
+      needs: QA
+      steps:
+        - run: echo UAT
+
+    PROD:
+      runs-on: self-hosted
+      needs: UAT
+      steps:
+        - run: echo PROD
+
+
+
+
+
+
+
