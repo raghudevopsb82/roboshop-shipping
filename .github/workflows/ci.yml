@@ -1,0 +1,19 @@
+name: Shipping CICD
+run-name: Shipping CICD
+on: [push]
+jobs:
+  ci:
+    uses: raghudevopsb82/github-reusable-actions/.github/workflows/ci.yml@main
+    with:
+      component: shipping
+
+  deploy:
+    needs: ci
+    uses: raghudevopsb82/github-reusable-actions/.github/workflows/deploy.yml@main
+    with:
+      component: shipping
+
+
+
+
+
