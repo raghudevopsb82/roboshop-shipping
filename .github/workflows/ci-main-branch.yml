@@ -1,12 +1,15 @@
-name: Shipping CICD
-run-name: Shipping CICD
-on: [push]
+name: Cart CICD - Main Branch
+run-name: Cart CICD - Main Branch
+on:
+  push:
+    branches:
+      - main
 jobs:
   ci:
-    uses: raghudevopsb82/github-reusable-actions/.github/workflows/ci.yml@main
+    uses: raghudevopsb82/github-reusable-actions/.github/workflows/ci-main-branch.yml@main
     with:
       component: shipping
-      appType: maven
+      appType: nodejs
     secrets:
       VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
 
@@ -15,6 +18,7 @@ jobs:
     uses: raghudevopsb82/github-reusable-actions/.github/workflows/deploy.yml@main
     with:
       component: shipping
+
 
 
 
