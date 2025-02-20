@@ -9,7 +9,7 @@ jobs:
     uses: raghudevopsb82/github-reusable-actions/.github/workflows/ci-main-branch.yml@main
     with:
       component: shipping
-      appType: nodejs
+      appType: maven
     secrets:
       VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
 
