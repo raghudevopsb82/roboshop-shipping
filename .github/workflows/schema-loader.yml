@@ -14,7 +14,7 @@ jobs:
 
     build-container-image:
       runs-on: self-hosted
-      needs: app-dependencies
+      needs: code-checkout
       steps:
         - name: Build Image
           run: |
