@@ -14,4 +14,4 @@ COPY            --from=newrelic_source /opt/newrelic/ /home/java/newrelic/
 COPY            run.sh /
 ENTRYPOINT      [ "bash", "/run.sh" ]
 
-###
+####
