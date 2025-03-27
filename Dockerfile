@@ -5,7 +5,8 @@ RUN             curl -O https://download.newrelic.com/newrelic/java-agent/newrel
 RUN             unzip newrelic-java.zip
 
 
-FROM            openjdk
+FROM            redhat/ubi9
+RUN             dnf install java-21-openjdk -y
 RUN             useradd java
 USER            java
 WORKDIR         /home/java
