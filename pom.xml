@@ -14,9 +14,9 @@
 	<name>shipping service</name>
 	<description>Shipping calculations</description>
 
-	<properties>
-		<java.version>1.8</java.version>
-	</properties>
+<!--	<properties>-->
+<!--		<java.version>1.8</java.version>-->
+<!--	</properties>-->
 
 	<dependencies>
 		<dependency>
